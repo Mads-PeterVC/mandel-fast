@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+env/
+.pytest_cache/
+.mypy_cache/
+
+# Rust
+target/
+
+# Compiled extensions
+*.so
+*.pyd
+*.dll
+*.dylib
+
+# Editors
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+
+# Benchmarks / outputs
+benchmarks/
+timings/
+plots/tmp/
+/target
