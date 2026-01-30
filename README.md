@@ -2,7 +2,10 @@
 
 ![](scripts/mandelbrot_rust_parallel.png)
 
-This is intended as an example of a Python project using `rust` to significantly speed up a performance critical part.
+This is intended as an example of a Python project using `rust` to significantly speed up a performance critical part. The project uses 
+[maturin](https://github.com/PyO3/maturin) to make the compiled rust function available from Python. 
+
+The project demonstrates this for the Mandelbrot set, but the setup is generally applicable to a wide range of cases. 
 
 ## The Mandelbrot set 
 
