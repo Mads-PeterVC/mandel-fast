@@ -7,7 +7,6 @@ name = "mandel-fast"
 version = "0.1.0"
 requires-python = ">=3.12"
 dependencies = [
-    "imageio>=2.37.2",
     "matplotlib>=3.10.8",
     "numpy>=2.4.1",
 ]
@@ -15,3 +14,19 @@ dependencies = [
 [tool.maturin]
 features = ["pyo3/extension-module"]
 module-name = "mandel_fast._rust"
+
+[tool.pytest.ini_options]
+testpaths = ["test/"]
+addopts = [
+  "--cov-report", "term",
+  "--cov", "mandel_fast"
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
+]
+
+[tool.ruff]
+line-length = 88
