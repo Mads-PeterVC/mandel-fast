@@ -208,10 +208,10 @@ if __name__ == "__main__":
 
     # Example usage
     extent = (
-        central_point[0] - 1.5,
-        central_point[0] + 1.5,
-        central_point[1] - 1.2,
-        central_point[1] + 1.2,
+        central_point[0] - 1.0,
+        central_point[0] + 1.0,
+        central_point[1] - 0.5,
+        central_point[1] + 0.5,
     )
     aspect_ratio = (extent[1] - extent[0]) / (extent[3] - extent[2])
 
