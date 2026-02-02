@@ -41,7 +41,8 @@ FUNCTION escape_time(cx, cy, max_iter):
 
 The project implements three versions of the algorithm 
 
-- A Python implementation
+- A pure Python implementation
+- A vectorized NumPy implementation
 - A Rust implementation
 - A parallel Rust implementation
 
