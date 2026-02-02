@@ -18,12 +18,14 @@ def plot_benchmark_results(npz_file='bench_results.npz', output_file='benchmark_
     py_times = data['py_times']
     rs_times = data['rs_times']
     rs_parallel_times = data['rs_parallel_times']
+    np_times = data['np_times']
 
     fig, axes = plt.subplots(1, 2, figsize=(12, 6), layout='constrained')
 
 
     ax = axes[0]
     ax.plot(pixels, py_times, 'o-', label='Python Implementation', color='blue')
+    ax.plot(pixels, np_times, 'x-', label='NumPy Implementation', color='red')
     ax.plot(pixels, rs_times, 's-', label='Rust Implementation', color='orange')
     ax.plot(pixels, rs_parallel_times, '^-', label='Rust Parallel Implementation', color='green')
     ax.set_ylabel('Time (seconds)')
@@ -34,6 +36,7 @@ def plot_benchmark_results(npz_file='bench_results.npz', output_file='benchmark_
     # Second subplot: Speedup
     ax = axes[1]
     ax.plot(pixels, py_times / rs_times, 's-', label='Rust Speedup', color='orange')
+    ax.plot(pixels, py_times / np_times, 'x-', label='NumPy Speedup', color='red')
     ax.plot(pixels, py_times / rs_parallel_times, '^-', label='Rust Parallel Speedup', color='green')
     ax.set_ylabel('Speedup (Python Time / Rust Time)')
     ax.set_xlabel('Number of Pixels')

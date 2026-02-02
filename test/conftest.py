@@ -1,5 +1,5 @@
 import pytest
-from mandel_fast import py_mandelbrot, rs_mandelbrot, rs_mandelbrot_parallel
+from mandel_fast import py_mandelbrot, rs_mandelbrot, rs_mandelbrot_parallel, np_mandelbrot
 
 @pytest.fixture(scope="module")
 def mandelbrot_settings():
@@ -27,3 +27,8 @@ def rs_mandelbrot_parallel_result(mandelbrot_settings):
     img = rs_mandelbrot_parallel(width, height, max_iter, *extent)
     return img
 
+@pytest.fixture()
+def np_mandelbrot_result(mandelbrot_settings):
+    width, height, max_iter, extent = mandelbrot_settings
+    img = np_mandelbrot(width, height, max_iter, *extent)
+    return img

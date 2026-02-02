@@ -19,7 +19,7 @@ mandel-fast = "mandel_fast.cli.main:main"
 
 [tool.maturin]
 features = ["pyo3/extension-module"]
-module-name = "mandel_fast._rust"
+module-name = "mandel_fast.core._rust"
 
 [tool.pytest.ini_options]
 testpaths = ["test/"]
